@@ -9,6 +9,9 @@ fi
 SOURCE_DIR=$1
 TARGET_DIR=$2
 
+echo "Source directory: $SOURCE_DIR"
+echo "Target directory: $TARGET_DIR"
+
 # Check if the source directory exists
 if [ ! -d "$SOURCE_DIR" ]; then
     echo "Source directory does not exist: $SOURCE_DIR"
