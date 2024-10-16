@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
-#include "/src/ft_putchar.c"
+#include "../src/ft_putchar.c"
 
 // Helper function to capture stdout
 void redirect_stdout(void)
