@@ -12,6 +12,7 @@ void redirect_stdout(void)
 Test(ft_putchar, test_newline, .init = redirect_stdout)
 {
     ft_putchar('\n');
+    fflush(stdout);
     const char *output = cr_get_redirected_stdout();
     cr_assert_str_eq(output, "\n", "Expected '\\n' but got '%s'", output);
 }
@@ -19,6 +20,7 @@ Test(ft_putchar, test_newline, .init = redirect_stdout)
 Test(ft_putchar, test_tab, .init = redirect_stdout)
 {
     ft_putchar('\t');
+    fflush(stdout);
     const char *output = cr_get_redirected_stdout();
     cr_assert_str_eq(output, "\t", "Expected '\\t' but got '%s'", output);
 }
@@ -26,6 +28,7 @@ Test(ft_putchar, test_tab, .init = redirect_stdout)
 Test(ft_putchar, test_null, .init = redirect_stdout)
 {
     ft_putchar('\0');
+    fflush(stdout);
     const char *output = cr_get_redirected_stdout();
     cr_assert_str_eq(output, "\0", "Expected '\\0' but got '%s'", output);
 }
@@ -33,6 +36,7 @@ Test(ft_putchar, test_null, .init = redirect_stdout)
 Test(ft_putchar, test_ff, .init = redirect_stdout)
 {
     ft_putchar('\xFF');
+    fflush(stdout);
     const char *output = cr_get_redirected_stdout();
     cr_assert_str_eq(output, "\xFF", "Expected '\\xFF' but got '%s'", output);
 }
